@@ -1,0 +1,53 @@
+#+TITLE: Short introduction to Topological Data Analysis
+
+This repository contains a talk about TDA. The slides are not very self-explanatory (yet). Pull-requests are welcome to expand or elucidate some of this highly technical material.
+
+* Slides
+The slides are written in Emacs Org-mode, and exported to =reveal.js=. To run them from this repository, clone reveal.js into the project root.
+
+#+BEGIN_SRC shell :eval no
+git clone https://github.com/hakimel/reveal.js
+#+END_SRC
+
+* Reading material
+- [[https://medium.com/basecs/k%C3%B6nigsberg-seven-small-bridges-one-giant-graph-problem-2275d1670a12][Vaidehi Joshi - Blog on Bridges of Königsberg]]
+- [[https://arxiv.org/pdf/1609.08227.pdf][Wasserman - Topological Data Analysis (pdf)]]
+- Edelsbrunner & Harer: Computational Topology, an introduction (book)
+
+* Notebook
+The notebook gives an example of using Gudhi to plot a persistence diagram in Python.
+
+** Prerequisites
+   - Jupyter (Lab)
+   - Numpy
+   - Matplotlib
+   - IPyWidgets
+   - Cython
+   - Gudhi [[http://gudhi.gforge.inria.fr/python/latest/installation.html][(installation manual)]]
+
+   Also to get =ipywidgets.interactive= running in Jupyter Lab, you'll need to run
+
+#+BEGIN_SRC shell :eval no
+jupyter labextension install @jupyter-widgets/jupyterlab-manager
+#+END_SRC
+
+* License & sources
+You are granted use of this presentation (files =tda.org=, =tda.html=, =local.css=, =README.org=) under the Apache v2 license.
+
+However, the following images are not mine, but I consider their use to be fair. If you find their use to be in violation, please contact me or file an issue:
+
+- =barcode.png= (unknown, [[http://www.math.tau.ac.il/~ostrover/Workshop/TDAMST/TDAMST.html][found here]])
+- =brain-science.png= (Nature publication)
+- =kaliningrad-bridges.png= ([[https://visualhistory.livejournal.com/39249.html][this Russian blog]] through Vaidehi Joshi's blog)
+- =kaliningrad.png= (Open Street Maps)
+- =mug-torus.gif= ([[http://en.wikipedia.org/wiki/Topology][Wikipedia:Topology]], [[https://commons.wikimedia.org/wiki/File:Mug_and_Torus_morph.gif][Wikipedia image page]])
+- =proteins.png= (Stat. Appl. Genet. Mol. Biol. 2016; 15(1): 19–38, DOI 10.1515/sagmb-2015-0057)
+- =simplicial-complex.svg= ([[https://en.wikipedia.org/wiki/Simplicial_complex][Wikipedia]], public domain)
+- =sousbie.jpg= (Mon. Not. R. Astron. Soc. (2011)
+doi:10.1111/j.1365-2966.2011.18394.x, Sousbie)
+- =title-bg.jpg= (Netherlands eScience Center)
+
+The following illustrations are mine and fall under the CC-BY 3.0 license:
+- =2mrs.png=
+- =dodecahedron.blend=, =dodecahedron.png=
+- =koenigsberg-graph.svg=

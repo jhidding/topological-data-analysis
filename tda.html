@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Topological Data Analysis</title>
+<meta name="author" content="((bold (:begin 1 :end 46 :contents-begin 2 :contents-end 45 :post-blank 0 :parent #0) Johan Hidding (Netherlands eScience Center)))"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/css/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/css/theme/simple.css" id="theme"/>
+
+<link rel="stylesheet" href="./pdf.css"/>
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = './reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide" data-background="./title-bg.jpg"><h1 class="title">Topological Data Analysis</h1><h2 class="author"><b>Johan Hidding (Netherlands eScience Center)</b></h2><h2 class="date">2018/06/21</h2>
+</section>
+<section>
+<section id="slide-org6a03812">
+<h2 id="org6a03812">Applications</h2>
+<ul>
+<li>Quantification of shape</li>
+<li>Analysis of large multi-connected data sets:
+<ul>
+<li>graphs, networks</li>
+
+</ul></li>
+<li>Classification of geometry:
+<ul>
+<li>(medical) images</li>
+<li>proteines</li>
+<li>brain</li>
+<li>cosmic web</li>
+
+</ul></li>
+
+</ul>
+
+</section>
+<section id="slide-org43eb1d6">
+<h3 id="org43eb1d6">Cosmic Web</h3>
+
+<div class="figure">
+<p><img src="alpha-betti-title.png" alt="alpha-betti-title.png" />
+</p>
+</div>
+</section>
+<section id="slide-orgb30ba9f">
+<h4 id="orgb30ba9f">Galaxies</h4>
+
+<div class="figure">
+<p><img src="2mrs.png" alt="2mrs.png" />
+</p>
+</div>
+
+</section>
+<section id="slide-org4662139">
+<h4 id="org4662139">Simulations</h4>
+
+<div class="figure">
+<p><img src="sousbie.jpg" alt="sousbie.jpg" width="50%" />
+</p>
+</div>
+
+<ul>
+<li>Sousbie (2011)</li>
+
+</ul>
+
+</section>
+<section id="slide-orga656dc7">
+<h3 id="orga656dc7">Brain science</h3>
+
+<div class="figure">
+<p><img src="brain-science.png" alt="brain-science.png" width="80%" />
+</p>
+</div>
+
+</section>
+<section id="slide-orga66c619">
+<h3 id="orga66c619">Proteins</h3>
+
+<div class="figure">
+<p><img src="proteins.png" alt="proteins.png" width="80%" />
+</p>
+</div>
+
+<ul>
+<li>Kovavec-Nikolic et al. 2016</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-question" data-background="#00aeef">
+<h2 id="question"><a id="org1f6f698"></a>What is TDA?</h2>
+<ul>
+<li>Topological Invariants (15 min):
+<ul>
+<li>Euler characteristic</li>
+<li>What is topology?</li>
+
+</ul></li>
+<li>Homology (15 min):
+<ul>
+<li>Simplicial complex</li>
+<li>Betti numbers</li>
+
+</ul></li>
+<li>Persistence (15 min):
+<ul>
+<li>Alpha shapes</li>
+<li>Persistence diagrams</li>
+
+</ul></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org471b375">
+<h2 id="org471b375">The 7 Bridges of Königsberg</h2>
+<div class="outline-text-2" id="text-org471b375">
+</div>
+</section>
+<section id="slide-orgb239f1d">
+<h3 id="orgb239f1d">The city of Kaliningrad</h3>
+
+<div class="figure">
+<p><img src="kaliningrad.png" alt="kaliningrad.png" />
+</p>
+</div>
+</section>
+<section id="slide-org760f146">
+<h4 id="org760f146">then</h4>
+
+<div class="figure">
+<p><img src="kaliningrad-bridges.png" alt="kaliningrad-bridges.png" />
+</p>
+</div>
+<ul>
+<li><a href="https://medium.com/basecs/k%C3%B6nigsberg-seven-small-bridges-one-giant-graph-problem-2275d1670a12">Medium blog about the seven bridges</a></li>
+
+</ul>
+
+</section>
+<section id="slide-orgc130356">
+<h4 id="orgc130356">Reduced to a graph</h4>
+
+<div class="figure">
+<p><object type="image/svg+xml" data="koenigsberg-graph.svg" class="org-svg">
+Sorry, your browser does not support SVG.</object>
+</p>
+</div>
+</section>
+<section id="slide-org0a339da">
+<h4 id="org0a339da">Euler Characteristic</h4>
+<p>
+\[\chi = V - E + F = 2\]
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-org7b6fc18">
+<h2 id="org7b6fc18">Regular polyhedra</h2>
+
+<div class="figure">
+<p><img src="dodecahedron.png" alt="dodecahedron.png" />
+</p>
+</div>
+</section>
+<section id="slide-orgae95f10">
+<h3 id="orgae95f10">Gotta catch'm all!</h3>
+<ul>
+<li>\(n\) edges per vertex: \[E = nV/2\]</li>
+<li>\(m\) vertices per face: \[F = nV/m\]</li>
+
+</ul>
+
+<p>
+\[V - \frac{nV}{2} + \frac{nV}{m} = 2\]
+</p>
+
+</section>
+<section id="slide-orgea01e63">
+<h3 id="orgea01e63">solve for integer \(n\) and \(m\)</h3>
+<ul>
+<li>\(m = 3, n = 3\), tetrahedron</li>
+<li>\(m = 3, n = 4\), octahedron</li>
+<li>\(m = 3, n = 5\), isocahedron</li>
+<li>\(m = 4, n = 3\), cube</li>
+<li>\(m = 5, n = 3\), dodecahedron</li>
+
+</ul>
+
+<p>
+No more possible solutions! <b>Do</b> try this at home!
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-orgd7285b4">
+<h2 id="orgd7285b4">Topology</h2>
+
+<div class="figure">
+<p><img src="mug-torus.gif" alt="mug-torus.gif" />
+</p>
+</div>
+</section>
+<section id="slide-org7ad0314">
+<h3 id="org7ad0314">But what is it really?</h3>
+<p>
+Dixit Wikipedia: Formally, let \(X\) be a set and let \(\tau\) be a family of subsets of \(X\). Then \(\tau\) is called a topology on \(X\) if:
+</p>
+
+<ol>
+<li>Both the empty set and \(X\) are elements of \(\tau\).</li>
+<li>Any union of elements of \(\tau\) is an element of \(\tau\).</li>
+<li>Any intersection of finitely many elements of \(\tau\) is an element of \(\tau\).</li>
+
+</ol>
+
+<p>
+If \(\tau\) is a topology on \(X\), then the pair \((X, \tau)\) is called a topological space.
+</p>
+
+</section>
+<section id="slide-org2e2107b">
+<h3 id="org2e2107b">Open sets</h3>
+<p>
+The members of \(\tau\) are called <i>open sets</i> in \(X\).
+</p>
+
+</section>
+<section id="slide-org947bc33">
+<h3 id="org947bc33">Neighbourhoods</h3>
+<p>
+A subset of \(X\) including an open set containing a point \(x \in X\) is called a <i>neighbourhood</i> of \(x\).
+</p>
+
+</section>
+<section id="slide-org98aa2ac">
+<h3 id="org98aa2ac">The Torus</h3>
+<p>
+<img src="torus.png" alt="torus.png" />
+\[V = 1\quad E=2\quad F=1\quad \chi = 0\]
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-org73e06e2">
+<h2 id="org73e06e2">(Simplicial) Homology</h2>
+<div class="outline-text-2" id="text-org73e06e2">
+</div>
+</section>
+<section id="slide-org4020dc3">
+<h3 id="org4020dc3">Simplicial complexes</h3>
+
+<div class="figure">
+<p><object type="image/svg+xml" data="simplicial-complex.svg" class="org-svg">
+Sorry, your browser does not support SVG.</object>
+</p>
+</div>
+
+</section>
+<section id="slide-orgcaf5c9b">
+<h4 id="orgcaf5c9b">boundary operator</h4>
+<ul>
+<li>set of <i>n</i>-cells
+<ul>
+<li>vertices, edges, faces, cells</li>
+
+</ul></li>
+
+<li>boundary operator \(\partial\)
+<ul>
+<li>cells \(\to\) faces</li>
+<li>faces \(\to\) edges</li>
+<li>\(\dots\)</li>
+<li>vertices \(\to\) \(\emptyset\)</li>
+
+</ul></li>
+<li>Modulo 2 arithmetic</li>
+
+</ul>
+
+</section>
+<section id="slide-orgc42cff3">
+<h4 id="orgc42cff3">Euler characteristic</h4>
+<ul>
+<li>again:</li>
+
+</ul>
+<p>
+\[\chi = \#v - \#e + \#f - \#c\]
+</p>
+
+</section>
+<section id="slide-orgd4948eb">
+<h3 id="orgd4948eb">Betti numbers</h3>
+<ul>
+<li>Formally, the <i>i</i>-th Betti number, denoted \(\beta_i\), is the rank of the <i>i</i>-th homology group on a topological space.</li>
+
+</ul>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">dimension</th>
+<th scope="col" class="org-left">description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">0</td>
+<td class="org-left">number of objects</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-left">number of loops</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-left">number of cavities</td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li>Fundamental topological invariants, for example:</li>
+
+</ul>
+<p>
+\[\chi = \beta_0 - \beta_1 + \beta_2 \dots\]
+</p>
+
+</section>
+<section id="slide-org35ee36b">
+<h3 id="org35ee36b">Filtration</h3>
+<ul>
+<li>start adding <i>n</i>-cells (sorted by some measure)
+<ul>
+<li>rule: boundary of cell should be added first!</li>
+
+</ul></li>
+
+</ul>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">n-cell</th>
+<th scope="col" class="org-right">\(\beta_0\)</th>
+<th scope="col" class="org-right">\(\beta_1\)</th>
+<th scope="col" class="org-right">\(\beta_2\)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">0 (vertex)</td>
+<td class="org-right">+1</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">1 (edge)</td>
+<td class="org-right">-1</td>
+<td class="org-right">+1</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">2 (face)</td>
+<td class="org-right">0</td>
+<td class="org-right">-1</td>
+<td class="org-right">+1</td>
+</tr>
+
+<tr>
+<td class="org-left">3 (cell)</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">-1</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">\(\chi\)</td>
+<td class="org-right">+</td>
+<td class="org-right">-</td>
+<td class="org-right">+</td>
+</tr>
+</tbody>
+</table>
+
+</section>
+<section id="slide-org557ad74">
+<h3 id="org557ad74">Persistence</h3>
+
+<div class="figure">
+<p><img src="barcode.png" alt="barcode.png" />
+</p>
+</div>
+
+<p>
+\[\mathcal{P} = [{\rm time\ of\ death}] - [{\rm time\ of\ birth}]\]
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-orgcbeccbc">
+<h2 id="orgcbeccbc">The End</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Persistent_homology">List of Softwares</a></li>
+<li>To the notebook!</li>
+
+</ul>
+
+</section>
+<section id="slide-org78d7155">
+<h3 id="org78d7155">What about the eScience center?</h3>
+<ul>
+<li>Write an extensive blog:
+<ul>
+<li>introduce the subject</li>
+<li>link to live notebooks</li>
+<li>evaluate existing software</li>
+
+</ul></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgd8b9516">
+<h2 id="orgd8b9516">Extras</h2>
+<div class="outline-text-2" id="text-orgd8b9516">
+</div>
+</section>
+<section id="slide-org7c74bae">
+<h3 id="org7c74bae">Derivation of Euler's polyhedron formula</h3>
+<ul>
+<li>Draw any planar graph</li>
+<li>Mark a spanning tree
+\[\#e_{\rm t} = \#v - 1\]</li>
+<li>Draw the dual of the graph</li>
+<li>Mark the complement of the previous spanning tree in the dual graph
+\[\#e_{\rm d} = \#f - 1\]</li>
+<li>All vertices, edges and nodes are accounted for!
+\[\#e = \#e_{\rm t} + \#e_{\rm d}\]</li>
+
+</ul>
+
+</section>
+<section id="slide-org9577a40">
+<h3 id="org9577a40">Gauss-Bonnet theorem</h3>
+<ul>
+<li>Total curvature relates to Euler characteristic</li>
+
+</ul>
+
+<p>
+\[\int_M K\;dA+\int_{\partial M}k_g\;ds=2\pi\chi(M)\]
+</p>
+
+<ul>
+<li>Total curvature of torus is 0.</li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/lib/js/head.min.js"></script>
+<script src="./reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: true,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: './reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: './reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: './reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: './reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: './reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>

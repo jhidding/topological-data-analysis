@@ -1,0 +1,71 @@
+.reveal {
+    font-family: "Akkurat-Light", sans;
+}
+
+#slide-question, #slide-hypercanny, #slide-hypercc #slide-results {
+    background: #00aeef;
+    color: white;
+}
+
+#slide-question h2, #slide-hypercanny h2, #slide-hypercc h2, #slide-results h2 {
+    color: white;
+}
+
+.reveal .title {
+    font-size: 50pt;
+    position: relative;
+    top: -50pt;
+}
+
+.reveal .author {
+    font-size: 30pt;
+    position: relative;
+    top: 75pt;
+}
+
+.reveal .date {
+    position: relative;
+    top: 75pt;
+    font-size: 20pt;
+}
+
+.reveal h2 {
+    font-variant: small-caps;
+}
+
+.reveal p {
+    text-align: left;
+}
+
+.reveal .figure p {
+    text-align: center;
+}
+
+.reveal .figure img {
+    padding: 5pt;
+    border-color:  #ffffff;
+}
+
+.reveal #sec-title-slide h2 {
+    text-align: left;
+}
+
+#slide-question h2 {
+    font-variant: normal;
+    text-align: left;
+}
+
+#slide-stability h2 {
+    color: black;
+    background: linear-gradient(to bottom right,#ffffffff,#cccccc88);
+    padding: 20pt 20pt 30pt 20pt;
+    border-radius: 15pt;
+}
+
+#slide-polarbear h3 {
+    color: black;
+    background: linear-gradient(to bottom right,#ffffffff,#cccccc88);
+    margin-top: 350pt;
+    padding: 20pt 20pt 30pt 20pt;
+    border-radius: 15pt;
+}

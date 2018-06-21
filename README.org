@@ -1,5 +1,7 @@
 #+TITLE: Short introduction to Topological Data Analysis
 
+[[file:dodecahedron.png]]
+
 This repository contains a talk about TDA. The slides are not very self-explanatory (yet). Pull-requests are welcome to expand or elucidate some of this highly technical material.
 
 * Slides
@@ -8,6 +10,9 @@ The slides are written in Emacs Org-mode, and exported to =reveal.js=. To run th
 #+BEGIN_SRC shell :eval no
 git clone https://github.com/hakimel/reveal.js
 #+END_SRC
+
+** Dodecahedron image
+The image of the dodecahedron is rendered with [[http://www.blender.org][Blender]].
 
 * Reading material
 - [[https://medium.com/basecs/k%C3%B6nigsberg-seven-small-bridges-one-giant-graph-problem-2275d1670a12][Vaidehi Joshi - Blog on Bridges of Königsberg]]

@@ -48,8 +48,7 @@ However, the following images are not mine, but I consider their use to be fair.
 - =mug-torus.gif= ([[http://en.wikipedia.org/wiki/Topology][Wikipedia:Topology]], [[https://commons.wikimedia.org/wiki/File:Mug_and_Torus_morph.gif][Wikipedia image page]])
 - =proteins.png= (Stat. Appl. Genet. Mol. Biol. 2016; 15(1): 19–38, DOI 10.1515/sagmb-2015-0057)
 - =simplicial-complex.svg= ([[https://en.wikipedia.org/wiki/Simplicial_complex][Wikipedia]], public domain)
-- =sousbie.jpg= (Mon. Not. R. Astron. Soc. (2011)
-doi:10.1111/j.1365-2966.2011.18394.x, Sousbie)
+- =sousbie.jpg= (Mon. Not. R. Astron. Soc. (2011), doi:10.1111/j.1365-2966.2011.18394.x, Sousbie)
 - =title-bg.jpg= (Netherlands eScience Center)
 
 The following illustrations are mine and fall under the CC-BY 3.0 license:

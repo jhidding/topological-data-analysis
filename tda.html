@@ -11,7 +11,7 @@
 
 <link rel="stylesheet" href="./reveal.js/css/theme/simple.css" id="theme"/>
 
-<link rel="stylesheet" href="./pdf.css"/>
+<link rel="stylesheet" href="./local.css"/>
 
 <!-- If the query includes 'print-pdf', include the PDF print sheet -->
 <script>
@@ -31,8 +31,8 @@
 <section id="sec-title-slide" data-background="./title-bg.jpg"><h1 class="title">Topological Data Analysis</h1><h2 class="author"><b>Johan Hidding (Netherlands eScience Center)</b></h2><h2 class="date">2018/06/21</h2>
 </section>
 <section>
-<section id="slide-org6a03812">
-<h2 id="org6a03812">Applications</h2>
+<section id="slide-org51b1e0c">
+<h2 id="org51b1e0c">Applications</h2>
 <ul>
 <li>Quantification of shape</li>
 <li>Analysis of large multi-connected data sets:
@@ -52,16 +52,16 @@
 </ul>
 
 </section>
-<section id="slide-org43eb1d6">
-<h3 id="org43eb1d6">Cosmic Web</h3>
+<section id="slide-orga395ae9">
+<h3 id="orga395ae9">Cosmic Web</h3>
 
 <div class="figure">
 <p><img src="alpha-betti-title.png" alt="alpha-betti-title.png" />
 </p>
 </div>
 </section>
-<section id="slide-orgb30ba9f">
-<h4 id="orgb30ba9f">Galaxies</h4>
+<section id="slide-org8233689">
+<h4 id="org8233689">Galaxies</h4>
 
 <div class="figure">
 <p><img src="2mrs.png" alt="2mrs.png" />
@@ -69,8 +69,8 @@
 </div>
 
 </section>
-<section id="slide-org4662139">
-<h4 id="org4662139">Simulations</h4>
+<section id="slide-org1a8eaec">
+<h4 id="org1a8eaec">Simulations</h4>
 
 <div class="figure">
 <p><img src="sousbie.jpg" alt="sousbie.jpg" width="50%" />
@@ -83,8 +83,8 @@
 </ul>
 
 </section>
-<section id="slide-orga656dc7">
-<h3 id="orga656dc7">Brain science</h3>
+<section id="slide-org33cf1fd">
+<h3 id="org33cf1fd">Brain science</h3>
 
 <div class="figure">
 <p><img src="brain-science.png" alt="brain-science.png" width="80%" />
@@ -92,8 +92,8 @@
 </div>
 
 </section>
-<section id="slide-orga66c619">
-<h3 id="orga66c619">Proteins</h3>
+<section id="slide-org81b1848">
+<h3 id="org81b1848">Proteins</h3>
 
 <div class="figure">
 <p><img src="proteins.png" alt="proteins.png" width="80%" />
@@ -109,7 +109,7 @@
 </section>
 <section>
 <section id="slide-question" data-background="#00aeef">
-<h2 id="question"><a id="org1f6f698"></a>What is TDA?</h2>
+<h2 id="question"><a id="orgc6e4c7d"></a>What is TDA?</h2>
 <ul>
 <li>Topological Invariants (15 min):
 <ul>
@@ -135,21 +135,21 @@
 </section>
 </section>
 <section>
-<section id="slide-org471b375">
-<h2 id="org471b375">The 7 Bridges of Königsberg</h2>
-<div class="outline-text-2" id="text-org471b375">
+<section id="slide-orgdcae7d1">
+<h2 id="orgdcae7d1">The 7 Bridges of Königsberg</h2>
+<div class="outline-text-2" id="text-orgdcae7d1">
 </div>
 </section>
-<section id="slide-orgb239f1d">
-<h3 id="orgb239f1d">The city of Kaliningrad</h3>
+<section id="slide-org79cb78b">
+<h3 id="org79cb78b">The city of Kaliningrad</h3>
 
 <div class="figure">
 <p><img src="kaliningrad.png" alt="kaliningrad.png" />
 </p>
 </div>
 </section>
-<section id="slide-org760f146">
-<h4 id="org760f146">then</h4>
+<section id="slide-orgc361601">
+<h4 id="orgc361601">then</h4>
 
 <div class="figure">
 <p><img src="kaliningrad-bridges.png" alt="kaliningrad-bridges.png" />
@@ -161,8 +161,8 @@
 </ul>
 
 </section>
-<section id="slide-orgc130356">
-<h4 id="orgc130356">Reduced to a graph</h4>
+<section id="slide-orgb7ae60b">
+<h4 id="orgb7ae60b">Reduced to a graph</h4>
 
 <div class="figure">
 <p><object type="image/svg+xml" data="koenigsberg-graph.svg" class="org-svg">
@@ -170,8 +170,8 @@ Sorry, your browser does not support SVG.</object>
 </p>
 </div>
 </section>
-<section id="slide-org0a339da">
-<h4 id="org0a339da">Euler Characteristic</h4>
+<section id="slide-orge28018d">
+<h4 id="orge28018d">Euler Characteristic</h4>
 <p>
 \[\chi = V - E + F = 2\]
 </p>
@@ -179,16 +179,16 @@ Sorry, your browser does not support SVG.</object>
 </section>
 </section>
 <section>
-<section id="slide-org7b6fc18">
-<h2 id="org7b6fc18">Regular polyhedra</h2>
+<section id="slide-org1d8fb7b">
+<h2 id="org1d8fb7b">Regular polyhedra</h2>
 
 <div class="figure">
 <p><img src="dodecahedron.png" alt="dodecahedron.png" />
 </p>
 </div>
 </section>
-<section id="slide-orgae95f10">
-<h3 id="orgae95f10">Gotta catch'm all!</h3>
+<section id="slide-org0f1d5bf">
+<h3 id="org0f1d5bf">Gotta catch'm all!</h3>
 <ul>
 <li>\(n\) edges per vertex: \[E = nV/2\]</li>
 <li>\(m\) vertices per face: \[F = nV/m\]</li>
@@ -200,8 +200,8 @@ Sorry, your browser does not support SVG.</object>
 </p>
 
 </section>
-<section id="slide-orgea01e63">
-<h3 id="orgea01e63">solve for integer \(n\) and \(m\)</h3>
+<section id="slide-org61552ad">
+<h3 id="org61552ad">solve for integer \(n\) and \(m\)</h3>
 <ul>
 <li>\(m = 3, n = 3\), tetrahedron</li>
 <li>\(m = 3, n = 4\), octahedron</li>
@@ -218,16 +218,16 @@ No more possible solutions! <b>Do</b> try this at home!
 </section>
 </section>
 <section>
-<section id="slide-orgd7285b4">
-<h2 id="orgd7285b4">Topology</h2>
+<section id="slide-orgcb16e39">
+<h2 id="orgcb16e39">Topology</h2>
 
 <div class="figure">
 <p><img src="mug-torus.gif" alt="mug-torus.gif" />
 </p>
 </div>
 </section>
-<section id="slide-org7ad0314">
-<h3 id="org7ad0314">But what is it really?</h3>
+<section id="slide-org43fb8b8">
+<h3 id="org43fb8b8">But what is it really?</h3>
 <p>
 Dixit Wikipedia: Formally, let \(X\) be a set and let \(\tau\) be a family of subsets of \(X\). Then \(\tau\) is called a topology on \(X\) if:
 </p>
@@ -244,22 +244,22 @@ If \(\tau\) is a topology on \(X\), then the pair \((X, \tau)\) is called a topo
 </p>
 
 </section>
-<section id="slide-org2e2107b">
-<h3 id="org2e2107b">Open sets</h3>
+<section id="slide-org444b8b0">
+<h3 id="org444b8b0">Open sets</h3>
 <p>
 The members of \(\tau\) are called <i>open sets</i> in \(X\).
 </p>
 
 </section>
-<section id="slide-org947bc33">
-<h3 id="org947bc33">Neighbourhoods</h3>
+<section id="slide-org92820a1">
+<h3 id="org92820a1">Neighbourhoods</h3>
 <p>
 A subset of \(X\) including an open set containing a point \(x \in X\) is called a <i>neighbourhood</i> of \(x\).
 </p>
 
 </section>
-<section id="slide-org98aa2ac">
-<h3 id="org98aa2ac">The Torus</h3>
+<section id="slide-orgeec9256">
+<h3 id="orgeec9256">The Torus</h3>
 <p>
 <img src="torus.png" alt="torus.png" />
 \[V = 1\quad E=2\quad F=1\quad \chi = 0\]
@@ -268,13 +268,13 @@ A subset of \(X\) including an open set containing a point \(x \in X\) is called
 </section>
 </section>
 <section>
-<section id="slide-org73e06e2">
-<h2 id="org73e06e2">(Simplicial) Homology</h2>
-<div class="outline-text-2" id="text-org73e06e2">
+<section id="slide-org5d41e4e">
+<h2 id="org5d41e4e">(Simplicial) Homology</h2>
+<div class="outline-text-2" id="text-org5d41e4e">
 </div>
 </section>
-<section id="slide-org4020dc3">
-<h3 id="org4020dc3">Simplicial complexes</h3>
+<section id="slide-org6aa5737">
+<h3 id="org6aa5737">Simplicial complexes</h3>
 
 <div class="figure">
 <p><object type="image/svg+xml" data="simplicial-complex.svg" class="org-svg">
@@ -283,8 +283,8 @@ Sorry, your browser does not support SVG.</object>
 </div>
 
 </section>
-<section id="slide-orgcaf5c9b">
-<h4 id="orgcaf5c9b">boundary operator</h4>
+<section id="slide-org313fb4f">
+<h4 id="org313fb4f">boundary operator</h4>
 <ul>
 <li>set of <i>n</i>-cells
 <ul>
@@ -305,8 +305,8 @@ Sorry, your browser does not support SVG.</object>
 </ul>
 
 </section>
-<section id="slide-orgc42cff3">
-<h4 id="orgc42cff3">Euler characteristic</h4>
+<section id="slide-orgab8aee0">
+<h4 id="orgab8aee0">Euler characteristic</h4>
 <ul>
 <li>again:</li>
 
@@ -316,8 +316,8 @@ Sorry, your browser does not support SVG.</object>
 </p>
 
 </section>
-<section id="slide-orgd4948eb">
-<h3 id="orgd4948eb">Betti numbers</h3>
+<section id="slide-orgf1bb606">
+<h3 id="orgf1bb606">Betti numbers</h3>
 <ul>
 <li>Formally, the <i>i</i>-th Betti number, denoted \(\beta_i\), is the rank of the <i>i</i>-th homology group on a topological space.</li>
 
@@ -364,8 +364,8 @@ Sorry, your browser does not support SVG.</object>
 </p>
 
 </section>
-<section id="slide-org35ee36b">
-<h3 id="org35ee36b">Filtration</h3>
+<section id="slide-org66f6d97">
+<h3 id="org66f6d97">Filtration</h3>
 <ul>
 <li>start adding <i>n</i>-cells (sorted by some measure)
 <ul>
@@ -435,8 +435,8 @@ Sorry, your browser does not support SVG.</object>
 </table>
 
 </section>
-<section id="slide-org557ad74">
-<h3 id="org557ad74">Persistence</h3>
+<section id="slide-org11ef0c5">
+<h3 id="org11ef0c5">Persistence</h3>
 
 <div class="figure">
 <p><img src="barcode.png" alt="barcode.png" />
@@ -450,8 +450,8 @@ Sorry, your browser does not support SVG.</object>
 </section>
 </section>
 <section>
-<section id="slide-orgcbeccbc">
-<h2 id="orgcbeccbc">The End</h2>
+<section id="slide-orgaeeaccc">
+<h2 id="orgaeeaccc">The End</h2>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Persistent_homology">List of Softwares</a></li>
 <li>To the notebook!</li>
@@ -459,8 +459,8 @@ Sorry, your browser does not support SVG.</object>
 </ul>
 
 </section>
-<section id="slide-org78d7155">
-<h3 id="org78d7155">What about the eScience center?</h3>
+<section id="slide-org5490c6e">
+<h3 id="org5490c6e">What about the eScience center?</h3>
 <ul>
 <li>Write an extensive blog:
 <ul>
@@ -475,13 +475,13 @@ Sorry, your browser does not support SVG.</object>
 </section>
 </section>
 <section>
-<section id="slide-orgd8b9516">
-<h2 id="orgd8b9516">Extras</h2>
-<div class="outline-text-2" id="text-orgd8b9516">
+<section id="slide-org1b7f814">
+<h2 id="org1b7f814">Extras</h2>
+<div class="outline-text-2" id="text-org1b7f814">
 </div>
 </section>
-<section id="slide-org7c74bae">
-<h3 id="org7c74bae">Derivation of Euler's polyhedron formula</h3>
+<section id="slide-org945b710">
+<h3 id="org945b710">Derivation of Euler's polyhedron formula</h3>
 <ul>
 <li>Draw any planar graph</li>
 <li>Mark a spanning tree
@@ -495,8 +495,8 @@ Sorry, your browser does not support SVG.</object>
 </ul>
 
 </section>
-<section id="slide-org9577a40">
-<h3 id="org9577a40">Gauss-Bonnet theorem</h3>
+<section id="slide-orgad7fdc3">
+<h3 id="orgad7fdc3">Gauss-Bonnet theorem</h3>
 <ul>
 <li>Total curvature relates to Euler characteristic</li>
 

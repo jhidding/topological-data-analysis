@@ -36,6 +36,18 @@ The notebook gives an example of using Gudhi to plot a persistence diagram in Py
 jupyter labextension install @jupyter-widgets/jupyterlab-manager
 #+END_SRC
 
+** Installing Gudhi
+Not entirely trivial after all. After unpacking the sources (a tar.gz in a zip???), we need to build the sources. Make sure you have Cython, CGAL and Eigen3 installed. I like to use the =ccmake= command to configure the build, since it gives a nicer interface and shows if you are missing some dependencies or not. Also run this in a Python virtual environment:
+
+#+BEGIN_SRC shell :eval no
+mkdir build
+cd build
+ccmake ..        # press 'c' and then 'g' if all's well
+make
+cd cython
+pip install .    # this will build and install the python module
+#+END_SRC
+
 * License & sources
 You are granted use of this presentation (files =tda.org=, =tda.html=, =local.css=, =README.org=) under the Apache v2 license.
 
